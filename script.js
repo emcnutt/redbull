@@ -3,20 +3,15 @@ if (Meteor.isClient) {
   Session.setDefault('counter', 0);
 
   Template.home.helpers({
-    counter: function () {
-      return Session.get('counter');
-    },
-
     cans: function() {
-      return Cans.find({});
+      return Cans.find({}, {sort: {createdAt: -1}});
     }
   });
 
   Template.home.events({
     
     'click .pop-up': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
+     
     },
 
     'click .redbull-regular': function () {
@@ -40,9 +35,17 @@ if (Meteor.isClient) {
       });
     },
 
-    
   });
+
+  Template.home.rendered = function(){
+    setTimeout(function(){
+      $('.banner-container').addClass("rendered");
+      $('.top-container').addClass("rendered");
+      $('.redbulls').addClass("rendered");
+    }, 2000);
+  };
 }
+
 
 if (Meteor.isServer) {
   Meteor.startup(function () {

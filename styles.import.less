@@ -1,0 +1,70 @@
+body {
+  background-color: #ED2C3A;
+  color: #fff;
+  font-family: 'Futura', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.redbulls {
+  display: flex;
+  .justify-content(center);
+  .align-items(center);
+  padding: 2% 5%;
+  width: 90%;
+  display: block;
+  opacity: 0;
+  .transition(all 1s ease);
+
+  &.rendered {
+    opacity: 1;
+  }
+}
+
+.redbull-can {
+  .flex(1 1 auto);
+  .align-self(center);
+  width: 100px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: RGBA(0,0,0,0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+.banner-container {
+  .display(flex);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  .transition(all 1s ease);
+
+  &.rendered {
+    height: 200px;
+    .transition(all 1s ease);
+  }
+}
+
+.banner {
+  .flex(1);
+}
+
+.top-container {
+  width: 90%;
+  height: 200px;
+  margin: 0 5%;
+  position: relative;
+  border-bottom: 1px solid darken(#ED2C3A, 20%);
+  .transition(all 1s ease);
+  opacity: 0;
+  
+  &.rendered {
+    opacity: 1;
+  }
+}

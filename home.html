@@ -1,29 +1,36 @@
 <template name="home">
 
-  <button class="pop-up">Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+	<div class="overlay hidden">
+	</div>
+	
+	<div class="banner-container">
+		<img class="banner" src="images/banner.svg"/>
+	</div>
 
-  <div class="rebulls">
-  	{{#each cans}}
-        {{> can}}
-    {{/each}}
-  </div>
+	<div class="top-container">
+		<div class="button">
+		  	<button class="redbull-regular">
+		  		Regular
+		  	</button>
 
-  <button class="redbull-regular">
-  	Regular
-  </button>
+		  	<button class="redbull-sugarfree">
+		  		Sugar Free
+		  	</button>
 
-  <button class="redbull-sugarfree">
-  	Sugar Free
-  </button>
+		  	<button class="redbull-zero">
+		  		Zero
+		  	</button>
+	  	</div>
+	</div>
 
-  <button class="redbull-zero">
-  	Zero
-  </button>
+  	<div class="redbulls">
+  		{{#each cans}}
+        	{{> can}}
+    	{{/each}}
+  	</div>
 
 </template>
 
 <template name="can">
 	<img class="redbull-can" src="images/{{type}}.svg"/>
-	{{type}}
 </template>
