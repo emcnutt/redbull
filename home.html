@@ -1,6 +1,8 @@
 <template name="home">
 
 	<div class="overlay hidden">
+		<div class="add-can-container">
+		</div>
 	</div>
 	
 	<div class="banner-container">
@@ -21,6 +23,7 @@
 		  		Zero
 		  	</button>
 	  	</div>
+	  	<button class="pop-up"></button>
 	</div>
 
   	<div class="redbulls">
@@ -32,5 +35,8 @@
 </template>
 
 <template name="can">
-	<img class="redbull-can" src="images/{{type}}.svg"/>
+	<div class="redbull-can-container">
+		<img class="redbull-can-overlay" src="images/delete.svg"/>
+		<img class="redbull-can" src="images/{{type}}.svg"/>
+	</div>
 </template>

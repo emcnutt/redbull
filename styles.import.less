@@ -10,9 +10,9 @@ body {
   display: flex;
   .justify-content(center);
   .align-items(center);
+  .flex-wrap(wrap);
   padding: 2% 5%;
   width: 90%;
-  display: block;
   opacity: 0;
   .transition(all 1s ease);
 
@@ -21,17 +21,37 @@ body {
   }
 }
 
-.redbull-can {
-  .flex(1 1 auto);
-  .align-self(center);
+.redbull-can-container {
+  .flex(0 1 auto);
   width: 100px;
+  position: relative;
+
+  &:hover {
+    .redbull-can-overlay {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+.redbull-can {
+  width: 100%;
+}
+
+.redbull-can-overlay {
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  .transition(all .4s ease);
 }
 
 .overlay {
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: RGBA(0,0,0,0.5);
+  z-index: 1;
+  background-color: RGBA(0,0,0,0.7);
+  .display(flex);
 }
 
 .hidden {
@@ -43,6 +63,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
+  z-index: 2;
   .transition(all 1s ease);
 
   &.rendered {
@@ -67,4 +88,21 @@ body {
   &.rendered {
     opacity: 1;
   }
+}
+
+.add-can-container {
+  background-color: #fff;
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+}
+
+.pop-up {
+  position: absolute;
+  background-image: url('images/add.svg');
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
 }

@@ -11,7 +11,7 @@ if (Meteor.isClient) {
   Template.home.events({
     
     'click .pop-up': function () {
-     
+      $('.overlay').removeClass("hidden");
     },
 
     'click .redbull-regular': function () {
@@ -44,6 +44,12 @@ if (Meteor.isClient) {
       $('.redbulls').addClass("rendered");
     }, 2000);
   };
+
+  Template.can.events({ 
+    'click .redbull-can-overlay': function () {
+      Cans.remove(this._id);
+    },
+  });
 }
 
 
