@@ -1,6 +1,29 @@
 <template name="home">
 
-  <button>Click Me</button>
+  <button class="pop-up">Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
 
+  <div class="rebulls">
+  	{{#each cans}}
+        {{> can}}
+    {{/each}}
+  </div>
+
+  <button class="redbull-regular">
+  	Regular
+  </button>
+
+  <button class="redbull-sugarfree">
+  	Sugar Free
+  </button>
+
+  <button class="redbull-zero">
+  	Zero
+  </button>
+
+</template>
+
+<template name="can">
+	<img class="redbull-can" src="images/{{type}}.svg"/>
+	{{type}}
 </template>

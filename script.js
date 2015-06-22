@@ -5,14 +5,42 @@ if (Meteor.isClient) {
   Template.home.helpers({
     counter: function () {
       return Session.get('counter');
+    },
+
+    cans: function() {
+      return Cans.find({});
     }
   });
 
   Template.home.events({
-    'click button': function () {
+    
+    'click .pop-up': function () {
       // increment the counter when button is clicked
       Session.set('counter', Session.get('counter') + 1);
-    }
+    },
+
+    'click .redbull-regular': function () {
+      Cans.insert({
+        type: 'regular',
+        createdAt: new Date() // current time
+      });
+    },
+
+    'click .redbull-sugarfree': function () {
+      Cans.insert({
+        type: 'sugarfree',
+        createdAt: new Date() // current time
+      });
+    },
+
+    'click .redbull-zero': function () {
+      Cans.insert({
+        type: 'zero',
+        createdAt: new Date() // current time
+      });
+    },
+
+    
   });
 }
 
