@@ -14,6 +14,10 @@ if (Meteor.isClient) {
       $('.overlay').removeClass("hidden");
     },
 
+    'click .overlay': function () {
+      $('.overlay').addClass("hidden");
+    },
+
     'click .redbull-regular': function () {
       Cans.insert({
         type: 'regular',
