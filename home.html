@@ -5,12 +5,12 @@
 		</div>
 	</div>
 	
-	<div class="banner-container">
-		<img class="banner" src="images/banner.svg"/>
-	</div>
-
 	<div class="top-container">
-		<div class="buttons">
+		
+		<input type="range" value="{{can_size}}" min="5" max="100" step="1" id="can-size">
+		
+		<div class="add-buttons">
+		  	Add: 
 		  	<button class="redbull-regular">
 		  		Regular
 		  	</button>
@@ -24,6 +24,17 @@
 		  	</button>
 	  	</div>
 	  	<button class="pop-up hidden"></button>
+	  	<div class="date-buttons">
+		  	<form id="date-filter">
+				<input class="date-filter-radio" type="radio" name="date" value="day">Today<br>
+				<input class="date-filter-radio" type="radio" name="date" value="week">This Week<br>
+				<input class="date-filter-radio" type="radio" name="date" value="all" checked="checked">All Time
+			</form>
+	  	</div>
+	</div>
+
+	<div class="banner-container">
+		<img class="banner" src="images/banner.svg"/>
 	</div>
 
   	<div class="redbulls">
@@ -35,7 +46,7 @@
 </template>
 
 <template name="can">
-	<div class="redbull-can-container">
+	<div class="redbull-can-container" style="width: {{can_size_px}}"> 
 		<img class="redbull-can-overlay" src="images/delete.svg"/>
 		<img class="redbull-can" src="images/{{type}}.svg"/>
 	</div>
