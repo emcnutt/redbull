@@ -11,3 +11,7 @@ iron:router
 less
 mrt:lesshat
 momentjs:moment
+mrt:fitbit-api
+mrt:accounts-fitbit
+coffeejesus:uikit-complete
+percolate:synced-cron
